@@ -160,24 +160,24 @@ public:
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
         genesis.nTime = 1296688602;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 0;
+        genesis.nNonce = 2;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 18432;
         strDataDir = "regtest";
-            printf("calc new genesis block\n");
-            printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
-            printf("genesis.nBits 0x%x\n", genesis.nBits);
+            //printf("calc new genesis block\n");
+            //printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            //printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
+            //printf("genesis.nBits 0x%x\n", genesis.nBits);
 
-            for (genesis.nNonce = 0; ; genesis.nNonce++) {
-                hashGenesisBlock = genesis.GetHash();
-                if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
-            }
+            //for (genesis.nNonce = 0; ; genesis.nNonce++) {
+                //hashGenesisBlock = genesis.GetHash();
+                //if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
+            //}
 
-            printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
-            printf("genesis.nNonce %d\n", genesis.nNonce);
-            printf("genesis.nTime %d\n", genesis.nTime);
-        //assert(hashGenesisBlock == uint256("0x7f84c3ff0d9c579380a6c8d9c9e4acd4425a3ade4a7df65d97138a89bc541361"));
+            //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+            //printf("genesis.nNonce %d\n", genesis.nNonce);
+            //printf("genesis.nTime %d\n", genesis.nTime);
+        assert(hashGenesisBlock == uint256("0x22856bf1ec61db2bf1982bfc1b49d77e0f5b06fc4c99a13ce2daffd317bb7035"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
