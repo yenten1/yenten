@@ -126,20 +126,8 @@ public:
         // Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1507032223;
         genesis.nNonce = 238202;
+        
         hashGenesisBlock = genesis.GetHash();
-            //printf("calc new genesis block\n");
-            //printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            //printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
-            //printf("genesis.nBits 0x%x\n", genesis.nBits);
-
-            //for (genesis.nNonce = 0; ; genesis.nNonce++) {
-                //hashGenesisBlock = genesis.GetHash();
-                //if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
-            //}
-
-            //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
-            //printf("genesis.nNonce %d\n", genesis.nNonce);
-            //printf("genesis.nTime %d\n", genesis.nTime);
         assert(hashGenesisBlock == uint256("0x00003c2b99c25897ca022b1f143af0fc4eb9e877bbb666a2f14ff6d8acb6a5e0"));
 
         vFixedSeeds.clear();
